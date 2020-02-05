@@ -1,0 +1,7 @@
+build/css
+build/module
+src/module
+gulp
+node_modules
+src/css/base-components/sprite-DO-NOT-EDIT.scss
+src/css/base-components/icon-generated-DO-NOT-EDIT.scss

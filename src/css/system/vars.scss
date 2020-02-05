@@ -1,0 +1,44 @@
+//===typo==========================
+$base_fs: 16px !default;
+// $base_lh: 1.428571429;
+$base_lh: 1;
+$base_font: Arial, sans-serif;
+$accent_font: 'Montserrat', $base_font;
+
+//===colors========================
+$white: #ffffff;
+$black: #000000;
+
+$accent_light: #ff0000;
+$second_light: #b7037f;
+$second_light2: #ca68a5;
+
+$error: #eb5757;
+$succes: #27ae60;
+
+//===container=====================
+$body_max_width: 1920px;
+$gutter: 10px;
+
+//===breaks========================
+$breaks: (
+    desktop: 1600px,
+    laptop: 1366px,
+    tablet_lg: 1280px,
+    tablet_md: 1024px,
+    tablet_sm: 960px,
+    mobile: 767px,
+);
+
+//===container-width========================
+$container: (
+    desktop: 1460px,
+    tablet: 798px,
+    mobile: 100%,
+);
+
+//===transition=====================
+$transition: linear;
+
+$cover: 'object-fit: cover;';
+$contain: 'object-fit: cover;';

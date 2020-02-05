@@ -1,0 +1,31 @@
+mixin input(data)
+    -data = data || {}
+    -tag = data.tag || 'input'
+    -id = data.id || false
+    -value = data.value || false
+    -className = data.className
+    -type = data.type || 'text'
+    -minlength = data.minlength || false
+    -placeholder = data.placeholder || false
+    -required = data.required || false
+    -pattern = data.pattern || false
+    -tabIndex = data.tabIndex || false
+    -readonly = data.readonly || false
+    -autofocus = data.autofocus || false
+
+    +b(tag).input(
+        id=id
+        value=value
+        autofocus=autofocus
+        class=className
+        name=type
+        type=type
+        minlength=minlength
+        placeholder=placeholder
+        required=required
+        pattern!=pattern
+        tabindex=tabIndex || '0'
+        autocomplete='off'
+        readonly=readonly)&attributes(attributes)
+
+        block

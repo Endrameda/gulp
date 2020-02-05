@@ -1,0 +1,20 @@
+.btn {
+    position: relative;
+    display: inline-block;
+    min-width: 180px;
+    padding-top: 16px;
+    padding-right: 24px;
+    padding-bottom: 14px;
+    padding-left: 24px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 34px;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

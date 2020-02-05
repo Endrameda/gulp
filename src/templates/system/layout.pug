@@ -1,0 +1,45 @@
+include ../../../node_modules/bemto.pug/bemto
+
+include head
+include favicon
+include ifie
+include noscript
+include styles
+include scripts
+
+include ../base-components/btn
+include ../base-components/icon
+include ../base-components/form
+include ../base-components/input
+include ../base-components/modal
+
+include ../site-components/header
+include ../site-components/footer
+include ../site-components/modals-wrap
+
+block vars
+
+- ju = 'javascript:undefined';
+- title = 'Комус спорт';
+
+doctype html
+
+
+html(lang='ru' class='no-js')
+    head
+        +head
+
+    body.page(class='page_'+page data-page=page)
+        +ifie
+
+        +noscript
+        .page__wrapper
+            +header
+            +b.MAIN.main.page__main
+                block breadcrumbs
+                block content
+
+            +footer
+        block modal
+        +scripts
+

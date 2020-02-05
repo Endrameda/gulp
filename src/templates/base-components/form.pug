@@ -1,0 +1,10 @@
+mixin form(data)
+    -data = data || {}
+    -action = data.action || action
+    -method = data.method || method
+    -enctype = data.enctype || enctype
+    +b.FORM.form(
+        action=action || "#",
+        method=method || 'POST',
+        enctype=enctype ? 'multipart/form-data' : false)&attributes(attributes)
+        block

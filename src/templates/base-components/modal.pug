@@ -1,0 +1,6 @@
+mixin modal(data)
+    -id = data.id || id
+    -className = data.className || className
+
+    +b.modal(id=id class=className).mfp-hide.mfp-with-anim&attributes(attributes)
+        block

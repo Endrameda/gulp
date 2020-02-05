@@ -1,0 +1,6 @@
+build/js
+build/module1
+src/module
+gulp
+node_modules
+gulpfile.js

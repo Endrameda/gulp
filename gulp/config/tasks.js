@@ -1,0 +1,15 @@
+module.exports = [
+    './gulp/tasks/clean.js',
+    './gulp/tasks/data.js',
+    './gulp/tasks/module.js',
+    './gulp/tasks/templates.js',
+    './gulp/tasks/styles.js',
+    './gulp/tasks/scripts.js',
+    './gulp/tasks/sprites.js',
+    './gulp/tasks/img.js',
+    './gulp/tasks/favicon.js',
+    './gulp/tasks/fonts.js',
+    './gulp/tasks/watch.js',
+    './gulp/tasks/serve.js',
+    './gulp/tasks/stylelint.js',
+];
