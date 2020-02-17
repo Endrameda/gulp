@@ -2,7 +2,7 @@ const webpack = require("webpack");
 
 module.exports = {
     output: {
-        filename: 'script.js',
+        filename: 'script.min.js',
     },
     mode: 'none',
     module: {

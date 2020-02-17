@@ -8,6 +8,8 @@ global.$ = {
     fs: require('fs'),
     paths: require('path'),
     merge: require('gulp-merge-json'),
+    gutil: require('gulp-util'),
+    gulpif: require('gulp-if'),
     autoprefixer: require('autoprefixer'),
     mqpacker: require('css-mqpacker'),
     sortCSSmq: require('sort-css-media-queries'),
@@ -17,7 +19,7 @@ global.$ = {
     imageminPngQuant: require('imagemin-pngquant'),
     imageminMozJpeg: require('imagemin-mozjpeg'),
     webpack: require('webpack'),
-    webpackStream: require( 'webpack-stream' ),
+    webpackStream: require('webpack-stream'),
     path: {
         tasks: require('./gulp/config/tasks.js'),
         paths: require('./gulp/config/paths.js')
@@ -47,13 +49,28 @@ $.gulp.task('build', $.gulp.series(
     )
 ));
 
-$.gulp.task('default', $.gulp.series(
-    'build',
-    $.gulp.parallel(
-        'watch',
-        'serve'
-    )
-));
+if ($.gutil.env.type === 'build') {
+    $.isProd = true;
+} else {
+    $.isProd = false;
+}
+
+$.isDev = !$.isProd;
+
+if ($.isDev) {
+    $.gulp.task('default', $.gulp.series(
+        'build',
+        $.gulp.parallel(
+            'watch',
+            'serve'
+        )
+    ));
+} else {
+    $.gulp.task('default', $.gulp.series(
+        'build'
+    ));
+}
+
 
 $.gulp.task('tunel', $.gulp.series(
     'build',
