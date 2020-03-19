@@ -1,0 +1,107 @@
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 1360px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: auto;
+    border-radius: 0;
+    background-color: $white;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+
+    &__title {
+        margin-bottom: 50px;
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 1;
+
+        @media all and (max-width: map_get($breaks, tablet_sm)) {
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+    }
+
+    &__desc {
+        margin-bottom: 30px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #5f5f5f;
+        text-align: center;
+    }
+
+    &__form-el-wrap {
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__inner {
+        padding: 50px;
+
+        @media all and (max-width: map_get($breaks, tablet_sm)) {
+            padding: 20px;
+        }
+    }
+
+    &__center {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    &_form {
+        max-width: 500px;
+
+        .modal__center {
+            margin-top: 15px;
+        }
+    }
+
+    &_cities {
+
+    }
+}
+
+// Animate modal from top
+.mfp-move-from-top {
+    .mfp-content {
+        padding-right: 16px;
+        padding-left: 16px;
+        vertical-align: middle;
+    }
+
+    .mfp-with-anim {
+        opacity: 0;
+        animation: zoomIn 0.5s;
+        transition: 0.5s;
+    }
+
+    &.mfp-bg {
+        opacity: 0;
+        transition: 0.5s;
+    }
+
+    &.mfp-ready {
+        .mfp-with-anim {
+            opacity: 1;
+        }
+
+        &.mfp-bg {
+            opacity: 0.8;
+        }
+    }
+
+    &.mfp-removing {
+
+        .mfp-with-anim {
+            opacity: 0;
+            animation: zoomOut .5s;
+        }
+
+        &.mfp-bg {
+            opacity: 0;
+        }
+    }
+}
