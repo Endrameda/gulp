@@ -1,9 +1,8 @@
 {
-    "name": "start-template-4px",
+    "name": "start-template",
     "author": {
-        "name": "Shamil Minibaev",
-        "email": "schamil.minibaev@gmail.com",
-        "url": "https://schamil74.github.io/Portfolio/"
+        "name": "Sardor Gofurov",
+        "email": "endrameda98@gmail.com"
     },
     "lisence": "MIT",
     "version": "1.0.1",
@@ -77,18 +76,5 @@
         "svg4everybody": "^2.1.9",
         "vanilla-text-mask": "^5.1.1"
     },
-    "optionalDependencies": {},
-    "config": {
-        "commitizen": {
-            "path": "node_modules/cz-customizable"
-        },
-        "cz-customizable": {
-            "config": "./gulp/config/commitizen.js"
-        }
-    },
-    "husky": {
-        "hooks": {
-            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g './gulp/config/commitlint.js'"
-        }
-    }
+    "optionalDependencies": {}
 }
