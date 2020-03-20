@@ -9,19 +9,6 @@
 ```
 npm i gulpjs/gulp-cli -g
 ```
-
-## Коммиты
-А так же для именования коммитов по нашему гайду установим глобально [commitizen](https://github.com/commitizen/cz-cli)
-```
-npm i -g commitizen
-```
-[более подробно](https://habr.com/ru/company/yandex/blog/431432/)
-
-Вместо привычной команды git commit, теперь нужно прописывать git cz и пройти заполнить опросник по коммиту.
-
-
-
-
 Установить пакеты локально
 
 ```
