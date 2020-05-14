@@ -115,6 +115,9 @@ export default () => {
                 if (!isValidate) {
                     ev.preventDefault();
                     ev.stopPropagation();
+                    check = [];
+                } else {
+                    return true;
                 }
             }
         });
