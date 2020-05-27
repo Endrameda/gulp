@@ -1,4 +1,4 @@
-import device from 'current-device';
+import { isMobile } from '../utils/tools/is-mobile';
 
 const mapId = $('#map');
 
@@ -7,19 +7,23 @@ function init() {
         center: mapId.data('center'),
         zoom: 16,
         controls: [],
-        behaviors: ['drag', 'dblClickZoom', 'multiTouch']
+        behaviors: ['drag', 'dblClickZoom', 'multiTouch'],
     });
 
-    const placemark = new ymaps.Placemark(mapId.data('placemark'), {
-        hintContent: mapId.data('content')
-    }, {
-        iconLayout: 'default#image',
-        iconImageHref: './assets/img/map/map-marker.svg',
-        iconImageSize: [146, 160],
-        iconImageOffset: [-73, -100],
-    });
+    const placemark = new ymaps.Placemark(
+        mapId.data('placemark'),
+        {
+            hintContent: mapId.data('content'),
+        },
+        {
+            iconLayout: 'default#image',
+            iconImageHref: './assets/img/map/map-marker.svg',
+            iconImageSize: [146, 160],
+            iconImageOffset: [-73, -100],
+        }
+    );
 
-    if (!device.desktop()) {
+    if (isMobile) {
         map.behaviors.disable('drag');
     }
 

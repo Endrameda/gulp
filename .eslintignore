@@ -1,5 +1,4 @@
-build/js
-build/module1
+build
 src/module
 gulp
 node_modules

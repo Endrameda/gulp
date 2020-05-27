@@ -1,10 +1,26 @@
 import maskInput from 'vanilla-text-mask/dist/vanillaTextMask';
 
 export default () => {
-    let phoneMask = ['+', '7', '(', /[1-9]/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/];
+    let phoneMask = [
+        '+',
+        '7',
+        '(',
+        /[1-9]/,
+        /\d/,
+        /\d/,
+        ')',
+        /\d/,
+        /\d/,
+        /\d/,
+        '-',
+        /\d/,
+        /\d/,
+        '-',
+        /\d/,
+        /\d/,
+    ];
     let tels = Array.from(document.querySelectorAll('.js-mask'));
-    tels.forEach(tel => {
-
+    tels.forEach((tel) => {
         let handlerFocus = function (e) {
             if (tel.value === '') {
                 tel.value = '+7';

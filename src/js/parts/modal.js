@@ -1,6 +1,5 @@
 import 'magnific-popup';
 
-
 const target = $('.js-modal-open');
 const targetVideo = $('.js-modal-open-video');
 
@@ -11,31 +10,31 @@ let defaultModalSettings = {
     tClose: 'Закрыть (Esc)',
     fixedContentPos: true,
     fixedBgPos: true,
-    overflowY: 'auto'
+    overflowY: 'auto',
 };
 
 let iframeSettings = {
-    type: 'iframe'
+    type: 'iframe',
 };
 
 let callbacksSettings = {
     callbacks: {
-        beforeOpen: function () {
-
-        },
+        beforeOpen: function () {},
         open: function () {
             // let instance = $.magnificPopup.instance;
             // instance.currItem.inlineElement.find('.input')[0].focus();
         },
-        afterClose: function () {
-
-        }
-    }
+        afterClose: function () {},
+    },
 };
 
 let regularSettings = $.extend({}, defaultModalSettings, callbacksSettings);
-let videoSettings = $.extend({}, defaultModalSettings, iframeSettings, callbacksSettings);
-
+let videoSettings = $.extend(
+    {},
+    defaultModalSettings,
+    iframeSettings,
+    callbacksSettings
+);
 
 export let initModalOpenClick = (settings = {}) => {
     settings = $.extend(settings, regularSettings);
@@ -46,4 +45,3 @@ export const initModal = () => {
     targetVideo.magnificPopup(videoSettings);
     target.magnificPopup(regularSettings);
 };
-

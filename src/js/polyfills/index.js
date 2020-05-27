@@ -7,5 +7,3 @@ $(() => {
     objectFitImages(images, { watchMQ: true });
     svg4everybody();
 });
-
-

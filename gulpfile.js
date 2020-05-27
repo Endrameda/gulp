@@ -22,8 +22,8 @@ global.$ = {
     webpackStream: require('webpack-stream'),
     path: {
         tasks: require('./gulp/config/tasks.js'),
-        paths: require('./gulp/config/paths.js')
-    }
+        paths: require('./gulp/config/paths.js'),
+    },
 };
 
 $.path.tasks.forEach(function (taskPath) {
@@ -33,21 +33,25 @@ $.webpackConfig = require('./gulp/config/webpack.config.js');
 $.processors = require('./gulp/config/processors.js');
 $.styleConfig = require('./gulp/config/styleConfig.js');
 
-$.gulp.task('build', $.gulp.series(
-    'clean', 'data',
-    $.gulp.parallel(
-        'style-lint',
-        'module',
-        'fonts',
-        'favicon',
-        'img',
-        'spriteSVG',
-        'spritePNG',
-        'templates',
-        'styles',
-        'scripts'
+$.gulp.task(
+    'build',
+    $.gulp.series(
+        'clean',
+        'data',
+        $.gulp.parallel(
+            'style-lint',
+            'module',
+            'fonts',
+            'favicon',
+            'img',
+            'spriteSVG',
+            'spritePNG',
+            'templates',
+            'styles',
+            'scripts'
+        )
     )
-));
+);
 
 if ($.gutil.env.type === 'build') {
     $.isProd = true;
@@ -58,24 +62,15 @@ if ($.gutil.env.type === 'build') {
 $.isDev = !$.isProd;
 
 if ($.isDev) {
-    $.gulp.task('default', $.gulp.series(
-        'build',
-        $.gulp.parallel(
-            'watch',
-            'serve'
-        )
-    ));
+    $.gulp.task(
+        'default',
+        $.gulp.series('build', $.gulp.parallel('watch', 'serve'))
+    );
 } else {
-    $.gulp.task('default', $.gulp.series(
-        'build'
-    ));
+    $.gulp.task('default', $.gulp.series('build'));
 }
 
-
-$.gulp.task('tunel', $.gulp.series(
-    'build',
-    $.gulp.parallel(
-        'watch',
-        'serve-tunel'
-    )
-));
+$.gulp.task(
+    'tunel',
+    $.gulp.series('build', $.gulp.parallel('watch', 'serve-tunel'))
+);

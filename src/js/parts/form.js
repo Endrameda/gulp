@@ -5,14 +5,19 @@ let check = [];
 let isValidate;
 
 function isValidEmail(emailAddress) {
-    let pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+    let pattern = new RegExp(
+        /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+    );
     return pattern.test(emailAddress);
 }
 
 function isValidPhone(phoneNumber) {
-    let pattern = new RegExp(/^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/g);
+    let pattern = new RegExp(
+        /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/g
+    );
     return pattern.test(phoneNumber);
 }
+
 function valid() {
     checkEachInput = true;
     check.push(checkEachInput);
@@ -48,7 +53,7 @@ function validByLength(value, length) {
 }
 
 function validByBetween(value, from, to) {
-    if ((value.length <= to) && (value.length >= from) && value.trim().length) {
+    if (value.length <= to && value.length >= from && value.trim().length) {
         valid();
     } else {
         invalid();
@@ -62,9 +67,9 @@ function validChecked(input) {
         invalid();
     }
 }
-export default () => {
-    forms.forEach(form => {
 
+export default () => {
+    forms.forEach((form) => {
         form.addEventListener('submit', function (ev) {
             const inputs = Array.from(this.querySelectorAll('.js-validate'));
 
@@ -100,7 +105,7 @@ export default () => {
                     if (!checkEachInput) {
                         input.classList.add('is-error');
 
-                        setTimeout( function () {
+                        setTimeout(function () {
                             input.classList.remove('is-error');
                         }, 3000);
                     }
@@ -109,7 +114,7 @@ export default () => {
 
             if (inputs.length) {
                 if (check.length) {
-                    isValidate = check.every(el => el === true);
+                    isValidate = check.every((el) => el === true);
                 }
 
                 if (!isValidate) {
