@@ -139,7 +139,7 @@ p {
 }
 
 /*Edge*/
-@supports ( -ms-accelerator:true ) {
+/*@supports ( -ms-accelerator:true ) {
     html {
         height: 100%;
         overflow: hidden;
@@ -149,7 +149,7 @@ p {
         overflow: auto;
     }
 }
-/*Ie 10/11*/
+!*Ie 10/11*!
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     html {
         height: 100%;
@@ -159,8 +159,7 @@ p {
         height: 100%;
         overflow: auto;
     }
-}
-
+}*/
 
 /* сделать карту черно белой
 [class*='ymaps-2'][class*='-ground-pane'] {
